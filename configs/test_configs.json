@@ -1,0 +1,55 @@
+{
+  "data_configs":{
+    "lang_pair": "en-zh",
+    "train_data": [
+      "/home/weihr/workplace/DATA/NMT_DATA_PY3/wmt2017-ende/train/de.txt",
+      "/home/weihr/workplace/DATA/NMT_DATA_PY3/wmt2017-ende/train/en.txt"],
+    "valid_data": [
+      "./test/valid/en-de/de.bpe.0",
+      "./test/valid/en-de/en.bpe.0"],
+    "bleu_valid_reference": "./test/valid/en-de/en.0",
+    "dictionaries": [
+      "/home/weihr/workplace/DATA/NMT_DATA_PY3/wmt2017-ende/dict/dict.de.json",
+      "/home/weihr/workplace/DATA/NMT_DATA_PY3/wmt2017-ende/dict/dict.en.json"],
+    "src_bpe_codes": "",
+    "tgt_bpe_codes": "",
+    "n_words_src": 3000,
+    "n_words_tgt": 3000,
+    "max_len": [50, 50],
+    "n_refs": 1
+  },
+  "model_configs":{
+    "dim_word": 17,
+    "dim": 7,
+    "enc_transition_depth": 2,
+    "dec_transition_depth": 2,
+    "tied_embedding": false,
+    "dropout_rate": 0.5
+  },
+  "optimizer_configs":{
+    "optimizer": "adam",
+    "learning_rate": 0.0005,
+    "weights_regularization": 0.0,
+    "optimizer_params":{
+      "clip_gradient": 1.0
+    }
+  },
+  "training_configs":{
+    "reload": true,
+    "batch_size": 50,
+    "valid_batch_size": 3,
+    "shuffle": false,
+    "bleu_valid_batch_size": 3,
+    "disp_freq": 100,
+    "save_freq": 1000,
+    "bleu_valid_freq": 100,
+    "loss_valid_freq": 100,
+    "lrate_decay_patience": 20,
+    "early_stop_patience": 20,
+    "lrate_decay": false,
+    "debug": true,
+    "max_epochs": 1000000,
+    "reset_lrate_each_epoch": false,
+    "eval_at_char_level": false
+  }
+}
